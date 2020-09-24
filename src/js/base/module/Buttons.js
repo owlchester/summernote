@@ -483,6 +483,23 @@ export default class Buttons {
       click: this.context.createInvokeHandler('editor.indent'),
     });
 
+    // Outdent and Indent in toolbar
+    this.context.memo('button.kanka-outdent', () => {
+      return this.button({
+        contents: this.ui.icon(this.options.icons.outdent),
+        tooltip: this.lang.lists.ordered + this.representShortcut('outdent'),
+        click: this.context.createInvokeHandler('editor.outdent'),
+      }).render();
+    });
+
+    this.context.memo('button.kanka-indent', () => {
+      return this.button({
+        contents: this.ui.icon(this.options.icons.indent),
+        tooltip: this.lang.lists.ordered + this.representShortcut('indent'),
+        click: this.context.createInvokeHandler('editor.indent'),
+      }).render();
+    });
+
     this.context.memo('button.justifyLeft', func.invoke(justifyLeft, 'render'));
     this.context.memo('button.justifyCenter', func.invoke(justifyCenter, 'render'));
     this.context.memo('button.justifyRight', func.invoke(justifyRight, 'render'));
