@@ -487,7 +487,7 @@ export default class Buttons {
     this.context.memo('button.kanka-outdent', () => {
       return this.button({
         contents: this.ui.icon(this.options.icons.outdent),
-        tooltip: this.lang.lists.ordered + this.representShortcut('outdent'),
+        tooltip: this.lang.paragraph.outdent + this.representShortcut('outdent'),
         click: this.context.createInvokeHandler('editor.outdent'),
       }).render();
     });
@@ -495,7 +495,7 @@ export default class Buttons {
     this.context.memo('button.kanka-indent', () => {
       return this.button({
         contents: this.ui.icon(this.options.icons.indent),
-        tooltip: this.lang.lists.ordered + this.representShortcut('indent'),
+        tooltip: this.lang.paragraph.indent + this.representShortcut('indent'),
         click: this.context.createInvokeHandler('editor.indent'),
       }).render();
     });

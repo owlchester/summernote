@@ -134,6 +134,10 @@ export default class CodeView {
     } else {
       this.$codable.on('blur', (event) => {
         this.context.triggerEvent('blur.codeview', this.$codable.val(), event);
+
+        const value = this.purify(dom.value(this.$codable, this.options.prettifyHtml) || dom.emptyPara);
+        this.$editable.html(value);
+        this.context.triggerEvent('change.codeview', this.$codable.val(), this.$codable);
       });
       this.$codable.on('input', () => {
         this.context.triggerEvent('change.codeview', this.$codable.val(), this.$codable);
